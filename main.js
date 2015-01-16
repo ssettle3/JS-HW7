@@ -11,23 +11,20 @@ var priceArray = items.map(function(itemPrice, i, a){
 	return itemPrice.price;
 });
 
-console.log(priceArray);
-
 var priceSum = priceArray.reduce(function(current, next){
 	return current + next;
 });
 
-console.log(priceSum);
-
 var priceAvg = (priceSum / items.length);
 
-console.log(priceAvg);
 
 // This yeilds a value of 23.625999999999998. So.....
 
 var Avg = priceAvg.toFixed(2);
 
+console.log("1.");
 console.log("The average price is " + Avg);
+console.log("");
 
 
 
@@ -43,7 +40,9 @@ var nameArray = itemArray.map(function(name){
 	return  name.title;
 });
 
+console.log("2.");
 console.log("Items that cost between $14.00 USD and $18.00 USD: " + nameArray);
+console.log("");
 
 
 
@@ -65,16 +64,27 @@ var priceArray = moneyArray.map(function(money){
 	return money.price;
 });
 
-console.log(nameArray + " costs " + moneyArray);
+console.log("3.");
+console.log(nameArray + " costs " + "£" + priceArray);
+console.log("");
 
 
 
 // ****************************** 4. How to find which items are made of wood. **************************************************//
 // ===============================================================================================================================
 
+var woodArray = items.filter(function(wood){
+		return wood.materials.indexOf("wood") > -1;
 
+});
 
-
+console.log("4.");
+console.log(woodArray[0].title + " is made of wood.");
+console.log(woodArray[1].title + " is made of wood.");
+console.log(woodArray[2].title + " is made of wood.");
+console.log(woodArray[3].title + " is made of wood.");
+console.log(woodArray[4].title + " is made of wood.");
+console.log("");
 
 
 
@@ -83,12 +93,15 @@ console.log(nameArray + " costs " + moneyArray);
 // ===============================================================================================================================
 
 var matArray = items.filter(function(mat){
-	if(mat.materials > mat.materials[8]){
+	if(mat.materials > mat.materials[7]){
 		return mat.materials 
 	}
 });
 
-console.log(matArray[0].title + " has 9 materials and they are; " + matArray[0].materials); 
+console.log("5.");
+console.log(matArray[0].title + " has " + matArray[0].materials.length + " materials and they are; " + matArray[0].materials); 
+console.log(matArray[1].title + " has " + matArray[1].materials.length + " materials and they are; " + matArray[1].materials); 
+console.log("");
 
 
 
@@ -102,4 +115,7 @@ var madeArrary = items.filter(function(made){
 	return made.who_made === "i_did";
 });
 
-console.log(madeArrary.length " items were made by their sellers.")
+console.log("6.");
+console.log(madeArrary.length + " items were made by their sellers.");
+console.log("");
+
