@@ -41,21 +41,28 @@ var nameArray = itemArray.map(function(name){
 console.log("Items that cost between $14.00 USD and $18.00 USD: " + nameArray);
 
 
+
+
+
 //*********************** 3. How to find the item with a "GBP" currency code and print its name and price. ***********************//
 //==================================================================================================================================
 // Set up a filter to search for the currency_code GPB
 
 var moneyArray = items.filter(function(money){
-	return money.currency_code === GBP;
+	return money.currency_code === "GBP";
 });
 var nameArray = moneyArray.map(function(name){
 	return name.title;
-	return name.price;
 });
+var priceArray = moneyArray.map(function(money){
+	return money.price;
+});
+console.log(nameArray + " costs " + moneyArray);
 
 
 
 // 4. How to find which items are made of wood.
+// ===============================================================================================================================
 
 
 
