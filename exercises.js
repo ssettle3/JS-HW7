@@ -48,9 +48,27 @@ function isVowel(char){
 // ---------------------
 
 function rovarspraket(phrase){
-  var cons = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z'];
-  
+    var cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+    var isCon = false;
+    var string1 = "";
+
+    for (i = 0; i < cons.length; i++) {
+        if (phrase == cons[i]) {
+            isCon = true;
+        }
+    }
+    return isCon;
+
+
+    for (var i = 0; i < phrase.length; i++) {
+        if (checkConsonants(phrase[i])) {
+            string1 += phrase[i] + "o" + phrase[i];
+        } else {
+            string1 += phrase[i];
+        }
+    }
 };
+  
 
 
 
@@ -115,5 +133,14 @@ function filterLongWords(words, i){
 // ---------------------
 
 function charFreq(string){
-    
-}
+    var freq = {};
+    for (var i = 0; i < string.length; i++){
+      var letter = string.charAt(i);
+      if(freq[letter]){
+        freq[letter]++;
+       } else {
+          freq[letter] = 1;
+        }
+      }
+      return freq;
+};
